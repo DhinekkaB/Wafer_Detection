@@ -13,6 +13,19 @@
 [Overview](#-overview) • [Architecture](#-system-architecture) • [Results](#-results) • [Quick Start](#-quick-start) • [Documentation](#-documentation)
 
 ---
+### 📥 Access Dataset
+
+The complete dataset is available on Google Drive: [Download Dataset](https://drive.google.com/drive/folders/1ELvzk_jxf1cS49J7Bg6TYLVo37f8jUG1?usp=drive_link)
+---
+
+### 📦 Trained Models
+
+| Model | Format | Download |
+|:-----:|:------:|:--------:|
+| **Edge Deployment** | ONNX | [![Download](https://drive.google.com/file/d/1P7pXT_2dHnE4BEGRX0pdVWwTS6Ac68sx/view?usp=drive_link) |
+| **PyTorch Checkpoint** | .pth | [![Download](https://drive.google.com/file/d/1m6rA06NR_sDJqM55CPSqZAFLOWPsUex-/view?usp=drive_link) |
+
+---
 
 </div>
 
@@ -32,7 +45,7 @@ Semiconductor manufacturing requires precise defect detection at the nanometer s
 ### Our Solution
 
 An **edge-deployable AI system** that:
-- ✅ Classifies 9 defect categories with **78% accuracy**
+- ✅ Classifies 9 defect categories with **82% accuracy**
 - ✅ Runs on **resource-constrained devices**
 - ✅ Enables **real-time decision making** at the edge
 
@@ -64,36 +77,17 @@ An **edge-deployable AI system** that:
 
 ---
 
-## 🔄 System Architecture
-```mermaid
-graph TB
-    subgraph Input["📥 Data Input"]
-        A[Grayscale Wafer Images<br/>160×160 pixels]
-    end
-    
-    subgraph Preprocessing["🔧 Preprocessing Pipeline"]
-        B[Data Augmentation<br/>Training Only]
-        C[Normalization &<br/>3-Channel Conversion]
-    end
-    
-    subgraph Model["🧠 AI Model"]
-        D[MobileNetV3-Small<br/>Transfer Learning]
-        E[Best Checkpoint Selection<br/>Validation-Based]
-    end
-    
-    subgraph Output["📤 Deployment"]
-        F[PyTorch Model<br/>.pth]
-        G[ONNX Export<br/>.onnx]
-        H[Edge AI Platform<br/>NXP eIQ Compatible]
-    end
-    
-    A --> B --> C --> D --> E
-    E --> F --> G --> H
-    
-    style A fill:#e1f5ff
-    style D fill:#fff4e1
-    style G fill:#e8f5e9
-```
+### 🎯 Architecture Highlights
+
+| Layer | Technology | Purpose |
+|:-----:|:----------:|:-------:|
+| **Input** | Grayscale Images | 160×160 wafer defect images |
+| **Preprocessing** | PyTorch Transforms | Augmentation & normalization |
+| **Model** | MobileNetV3-Small | Lightweight CNN architecture |
+| **Training** | Transfer Learning | ImageNet pre-trained weights |
+| **Export** | ONNX | Edge deployment compatibility |
+
+</div>
 
 ---
 
@@ -433,9 +427,9 @@ python export_onnx.py
 
 ## 📚 References
 
-1. **[Deep Learning for Wafer Defect Inspection](https://example.com)** – Industrial survey on CNN-based semiconductor defect classification
-2. **[Public SEM/Wafer Defect Datasets](https://example.com)** – Open-source semiconductor inspection image repositories
-3. **[NXP eIQ Edge AI Toolkit Documentation](https://www.nxp.com/eiq)** – Edge deployment framework and optimization guidelines
+1. **Deep Learning for Wafer Defect Inspection** – Industrial survey on CNN-based semiconductor defect classification
+2. **Public SEM/Wafer Defect Datasets** – Open-source semiconductor inspection image repositories
+3. **NXP eIQ Edge AI Toolkit Documentation** – Edge deployment framework and optimization guidelines
 
 ---
 
