@@ -22,8 +22,8 @@ The complete dataset is available on Google Drive: [Download Dataset](https://dr
 
 | Model | Format | Download |
 |:-----:|:------:|:--------:|
-| **Edge Deployment** | ONNX | [![Download](https://drive.google.com/file/d/1P7pXT_2dHnE4BEGRX0pdVWwTS6Ac68sx/view?usp=drive_link)] |
-| **PyTorch Checkpoint** | .pth | [![Download](https://drive.google.com/file/d/1m6rA06NR_sDJqM55CPSqZAFLOWPsUex-/view?usp=drive_link)] |
+| **Edge Deployment** | ONNX | [Download](https://drive.google.com/file/d/1P7pXT_2dHnE4BEGRX0pdVWwTS6Ac68sx/view?usp=drive_link) |
+| **PyTorch Checkpoint** | .pth | [Download](https://drive.google.com/file/d/1m6rA06NR_sDJqM55CPSqZAFLOWPsUex-/view?usp=drive_link) |
 
 ---
 
