@@ -463,6 +463,6 @@ Results are based on test set evaluation. No hardware deployment or real-time pe
 
 **Made with 💙 for i4C DeepTech Hackathon**
 
-[![Star this repo](https://img.shields.io/github/stars/yourusername/wafer-defect-classification?style=social)](https://github.com/yourusername/wafer-defect-classification)
+[![Star this repo](https://img.shields.io/github/stars/yourusername/wafer-defect-classification?style=social)](https://github.com/DhinekkaB/Wafer_Detection.git)
 
 </div>
