@@ -26,6 +26,218 @@ The complete dataset is available on Google Drive: [Download Dataset](https://dr
 | **PyTorch Checkpoint** | .pth | [Download](https://drive.google.com/file/d/1m6rA06NR_sDJqM55CPSqZAFLOWPsUex-/view?usp=drive_link) |
 
 ---
+---
+
+# 🚀 Phase 2 – ONNX Inference & Evaluation (Hackathon Submission)
+
+<div align="center">
+
+**Strict reuse of Phase-1 ONNX model without retraining**
+
+</div>
+
+---
+
+## 📌 Phase-2 Overview
+
+<table>
+<tr>
+<td width="60%">
+
+### Objective
+
+Evaluate the previously trained **MobileNetV3 ONNX model** on the hackathon test dataset under strict constraints:
+
+- ❌ No retraining allowed  
+- ❌ No architecture modification  
+- ❌ No new model submission  
+- ✅ Same Phase-1 exported ONNX model reused  
+- ✅ Class mismatch handled via mapping to `other`  
+
+### Evaluation Scope
+
+- Pure ONNX inference
+- Deterministic pipeline
+- Minimal preprocessing (resize + required scaling only)
+- Metrics generation
+- Confusion matrix visualization
+
+</td>
+<td width="40%">
+
+### 📊 Phase-2 Performance
+
+| Metric | Score |
+|:------:|:-----:|
+| **Accuracy** | **54.39%** |
+| **Precision (Macro)** | **53.89%** |
+| **Recall (Macro)** | **49.79%** |
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📈 Confusion Matrix (Phase-2 Evaluation)
+
+<div align="center">
+
+<img src="confusion_matrix_phase2.png" alt="Phase-2 Confusion Matrix" width="500"/>
+
+**Evaluation performed using strict ONNX inference pipeline**
+
+</div>
+
+---
+
+## 🧾 Inference Log (Phase-2 Run)
+
+<div align="center">
+
+<img src="Screenshot 2026-02-16 201434.png" alt="Inference Log Screenshot" width="600"/>
+
+</div>
+
+> The complete log file is available in the repository as:
+> `inference_log_phase2.txt`
+
+---
+
+## 📂 Phase-2 Submission Files
+
+<table>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td><code>hackathon_test_dataset_prediction.py</code></td>
+<td>ONNX inference script used for Phase-2 evaluation</td>
+</tr>
+
+<tr>
+<td><code>inference_log_phase2.png</code></td>
+<td>Generated log file containing metrics and confusion matrix values</td>
+</tr>
+
+<tr>
+<td><code>confusion_matrix_phase2.png</code></td>
+<td>Confusion matrix visualization for hackathon test dataset</td>
+</tr>
+
+</table>
+
+---
+
+## ⚙️ Phase-2 Inference Pipeline
+
+```python
+Image → Resize (160×160) → Float32 Scaling → ONNX Runtime → Argmax → Metrics
+```
+---
+
+## ⚙️ Key Characteristics
+
+<table>
+<tr>
+<td width="100%">
+
+| Feature | Description |
+|----------|-------------|
+| **Model Reuse** | `mobilenetv3_wafer.onnx` from Phase-1 |
+| **Retraining** | Not performed |
+| **Fine-Tuning** | Not performed |
+| **Parameter Modification** | None |
+| **Class Handling** | Test mismatches mapped to `other` |
+| **Evaluation Type** | Fully deterministic ONNX inference |
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🔎 Observations
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### ✅ Strong Detection Performance
+
+The model demonstrates reliable classification for:
+
+- **Bridge**
+- **LER**
+- **Particle**
+- **Other**
+
+These classes show strong diagonal dominance in the confusion matrix, indicating stable prediction consistency.
+Other class has moderate accuracy
+
+</td>
+
+<td width="50%" valign="top">
+
+### ⚠️ Expected Confusion Patterns
+
+Misclassifications primarily occur between visually similar defects:
+
+- **Open ↔ Other**
+- **Missing Via ↔ Clean**
+
+Such confusion patterns are consistent with structural similarity in wafer defect morphology.
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📈 Generalization Insight
+
+<div align="center">
+
+The model demonstrates stable generalization capability under strict evaluation constraints.
+
+</div>
+
+<table>
+<tr>
+<td align="center">
+
+**Evaluation Constraints Applied**
+
+- No retraining  
+- No architectural modification  
+- Class label mismatch in test dataset  
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🏁 Compliance Statement
+
+<table>
+<tr>
+<td width="100%">
+
+Phase-2 evaluation strictly adheres to hackathon rules:
+
+- Model retraining was **NOT** performed.
+- Phase-1 ONNX model reused without modification.
+- Only permitted preprocessing (resize + required scaling) applied.
+- All mandatory evaluation artifacts generated and included.
+
+</td>
+</tr>
+</table>
+
+---
 
 </div>
 
