@@ -95,7 +95,7 @@ Evaluate the previously trained **MobileNetV3 ONNX model** on the hackathon test
 
 <div align="center">
 
-<img src="Screenshot 2026-02-16 201434.png" alt="Inference Log Screenshot" width="600"/>
+<img src="inference_log_phase2.png" alt="Inference Log Screenshot" width="600"/>
 
 </div>
 
