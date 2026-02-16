@@ -241,7 +241,7 @@ Phase-2 evaluation strictly adheres to hackathon rules:
 
 </div>
 
-## 🎯 Overview
+## 🎯 Overview(Phase 1)
 
 <table>
 <tr>
@@ -530,8 +530,8 @@ python test.py
 ### 📋 Prerequisites
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/wafer-defect-classification.git
-cd wafer-defect-classification
+git clone https://github.com/DhinekkaB/Wafer_Detection.git
+cd wafer_detection
 
 # Install dependencies
 pip install -r requirements.txt
