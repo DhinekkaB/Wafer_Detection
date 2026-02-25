@@ -274,11 +274,13 @@ sequenceDiagram
 ## 📁 File Structure
 
 ```
-Phase3/
+phase3_results/
 ├── 📂 logs/
 │   └── 📄 train_log.txt              ← Full epoch-by-epoch training log
-├── 📄 TRAIN_FINAL.py                 ← Full training pipeline
-├── 📄 TEST_PREDICTIONS.py            ← Inference and prediction script
+├── 📂 code/ 
+│    └── 📄 TRAIN_FINAL.py            ← Full training pipeline   
+│   └── 📄 TEST_PREDICTIONS.py        ← Inference and prediction script    
+│ 
 ├── 📦 best_model.pth                 ← PyTorch checkpoint (5.96 MB)
 ├── 📱 model.tflite                   ← TFLite deployment model ✅
 ├── 📋 model_metadata.json            ← Architecture config and metrics
@@ -323,6 +325,11 @@ print(f"Prediction : {CLASS_NAMES[pred]}")
 print(f"Confidence : {probs[0, pred]:.2%}")
 ```
 
+## Deployment result
+On porting we got
+<p align="center">
+  <img src="images/output.png" width="500"/>
+</p>
 ---
 
 <div align="center">
@@ -334,3 +341,5 @@ print(f"Confidence : {probs[0, pred]:.2%}")
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=phase3.wafer.defect&left_color=1a1a2e&right_color=0099ff)
 
 </div>
+
+---
