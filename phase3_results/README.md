@@ -167,30 +167,6 @@ xychart-beta horizontal
 
 > **CC** = CLEAN\_CRACK &nbsp;·&nbsp; **CVA** = CLEAN\_VIA &nbsp;·&nbsp; **CRK** = CRACK &nbsp;·&nbsp; **BRG** = BRIDGE &nbsp;·&nbsp; **OTH** = OTHERS &nbsp;·&nbsp; **PAR** = PARTICLE &nbsp;·&nbsp; **CL** = CLEAN\_LAYER
 
-### Precision vs Recall — Quadrant
-
-```mermaid
-quadrantChart
-    title Precision vs Recall — Per Class
-    x-axis Low Recall --> High Recall
-    y-axis Low Precision --> High Precision
-    quadrant-1 High on Both
-    quadrant-2 Precise but Misses
-    quadrant-3 Needs Improvement
-    quadrant-4 Catches but Noisy
-    CLEAN_CRACK: [0.97, 0.91]
-    VIA: [0.85, 0.94]
-    CLEAN_VIA: [0.95, 0.84]
-    CRACK: [0.80, 0.97]
-    LER: [0.72, 0.91]
-    OPEN: [0.75, 0.86]
-    CMP: [0.85, 0.76]
-    BRIDGE: [0.82, 0.75]
-    OTHERS: [0.78, 0.82]
-    PARTICLE: [0.75, 0.77]
-    CLEAN_LAYER: [0.85, 0.68]
-```
-
 ---
 
 ## 🗂️ Classification Report
@@ -270,6 +246,13 @@ sequenceDiagram
 ```
 
 ---
+## Deployment result
+On porting we got
+<p align="center">
+  <img src="images/output.png" width="500"/>
+</p>
+---
+
 
 ## 📁 File Structure
 
@@ -324,16 +307,8 @@ with torch.no_grad():
 print(f"Prediction : {CLASS_NAMES[pred]}")
 print(f"Confidence : {probs[0, pred]:.2%}")
 ```
-
-## Deployment result
-On porting we got
-<p align="center">
-  <img src="images/output.png" width="500"/>
-</p>
 ---
-
 <div align="center">
-
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&animation=twinkling" width="100%"/>
 
 **Phase 3 Complete** &nbsp;·&nbsp; MobileNetV3 Small &nbsp;·&nbsp; **82.69% Accuracy** &nbsp;·&nbsp; TFLite ✅
